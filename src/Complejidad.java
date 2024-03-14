@@ -144,7 +144,15 @@ public class Complejidad {
 
     // Ejercicio 52. Calcular la complejidad temporal asintótica del método f().
 
-    // La complejidad temporal asintótica del método f() es O(n log n), donde n es el argumento de f().
+    public static int f(int n) {
+        if (n == 0) return 1;
+        else if (n < 0) return -1;
+        else{
+            int m = 1/f(n/2) + f(n/2);
+            return sum(m);
+        }
+    }
+    //La complejidad temporal asintótica sería 0(2log(n),ya que se divide a la mitad el input de manera recursiva pero se va llamando de 2 en 2) 
 
     // Ejercicio 53. ¿Es cierto que la complejidad en el caso peor de la inserción en un ArrayList es diferente si el ArrayList está ordenado o no?
 
@@ -175,7 +183,6 @@ public class Complejidad {
     // Ejercicio 55. Explicar por qué el problema del ajedrez todavía no está resuelto.
 
     // El problema del ajedrez implica una gran cantidad de posibles configuraciones y movimientos, lo que hace
-    // que el espacio de búsqueda sea enormemente grande. Aunque las computadoras modernas pueden calcular y evaluar
-    // muchas posiciones por segundo, el número total de posiciones sigue siendo astronómicamente grande.
+    // que el espacio de búsqueda sea enormemente grande.
 }
 
